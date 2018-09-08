@@ -21,7 +21,7 @@ $lista = $usuario->getAll();
     <br/> <br/>
 
 
-    <table border="1" width="500">
+    <table border="1" width="700">
         <tr>
             <th>ID</th>
             <th>E-MAIL</th>
@@ -41,6 +41,7 @@ $lista = $usuario->getAll();
         <?php endforeach;?>
     </table>
 
+    <a href="index.html">Página Inicial</a>
 
     <div class="modal_bg">
         <div class="modal">
