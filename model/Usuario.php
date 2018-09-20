@@ -98,6 +98,24 @@ class Usuario {
 
     }
 
+
+    
+
+
+    private function existeLivro($idlivro){
+        $sql = "SELECT * FROM livros WHERE idlivro = :idlivro";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":idlivro", $idlivro);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
    
 
 }
