@@ -19,7 +19,7 @@ class Usuario {
 
     public function adicionar($email , $senha) {
 
-        if($this->existeEmail($email) == false){
+        if($this->existeEmail($email) == false && !empty($senha)){
             $sql = "INSERT INTO usuarios (email, senha) VALUES (:email , :senha)";
             $sql = $this->pdo->prepare($sql);      
             $sql->bindValue(":email", $email);
