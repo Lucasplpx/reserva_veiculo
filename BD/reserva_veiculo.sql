@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08-Set-2018 às 17:36
+-- Generation Time: 21-Set-2018 às 02:31
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -63,8 +63,7 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `email`, `senha`) VALUES
 (1, 'testelucas@gmail.com', 'abc123456'),
 (2, 'pedro@gmail.com', 'abc123456'),
-(3, 'leonardodance2011@hotmail', 'asdf'),
-(4, 'pedrinho@hotmail.com', 'abc');
+(3, 'leonardodance2011@hotmail', 'asdf');
 
 -- --------------------------------------------------------
 
@@ -85,7 +84,9 @@ CREATE TABLE `veiculos` (
 --
 
 INSERT INTO `veiculos` (`id`, `marca`, `modelo`, `cor`, `ano`) VALUES
-(1, 'BMW-tt', 'XZT', 'Preta/Cinza', 2022);
+(1, 'BMW-tt', 'XZT', 'Preta/Cinza', 2022),
+(2, 'Gol', 'z', 'BLUE', 200),
+(3, 'WW', 'MP', 'BLACK', 2500);
 
 --
 -- Indexes for dumped tables
@@ -123,13 +124,13 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `veiculos`
 --
 ALTER TABLE `veiculos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
