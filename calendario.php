@@ -26,7 +26,7 @@
 				$dr_fim = strtotime($item['data_fim']);
 
 				if( $w >= $dr_inicio && $w <= $dr_fim ) {
-					echo $item['pessoa']." (".$item['id_carro'].")    <a href=\'editaReserva.php?id=".$item['id']. "> Editar </a>  <br/>";
+					echo $item['pessoa']." (".$item['id_carro'].")    <a href=editaReserva.php?id=".$item['id']. "> Editar </a>  ||  <a href=excluirReserva.php?id=".$item['id']. "> Excluir </a>  <br/>";
 	
 				}
 
