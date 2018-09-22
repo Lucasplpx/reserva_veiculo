@@ -1,4 +1,5 @@
 <?php
+require 'index.php';
 require 'config.php';
 require 'classes/carros.class.php';
 require 'classes/reservas.class.php';

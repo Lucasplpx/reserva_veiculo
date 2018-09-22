@@ -1,4 +1,5 @@
 <?php
+require 'index.php';
 include 'model/Cliente.php';
 $cliente = new Cliente();
 

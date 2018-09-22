@@ -1,4 +1,5 @@
 <?php 
+require 'index.php';
 require 'config.php';
 include 'model/Reserva.php';
 require 'classes/carros.class.php';

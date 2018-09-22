@@ -1,4 +1,5 @@
 <?php
+require 'index.php';
 include 'model/Reserva.php';
 $reserva = new Reserva();
 

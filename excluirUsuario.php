@@ -1,4 +1,5 @@
 <?php
+require 'index.php';
 include 'model/Usuario.php';
 $usuario = new Usuario();
 

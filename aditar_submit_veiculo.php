@@ -1,4 +1,5 @@
 <?php
+require 'index.php';
 include 'model/Veiculo.php';
 $veiculo = new Veiculo();
 
