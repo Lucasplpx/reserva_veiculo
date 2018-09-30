@@ -21,29 +21,115 @@ if(!empty($_GET['id'])){
 
 ?>
 
-<h1>Alterar dados do Cliente</h1>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/estilo.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/estilo.css" />
+    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+    <title>Cliente Cadastro</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <p class="text-center">
+            <h1>Sistema Reserva Veículo</h1>
+        </p>
+    </nav>
 
 
-<form action="aditar_submit_cliente.php" method="post">
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+            <a class="nav-link list-group-item-primary" href="listaUsuario.php">Usuarios</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link list-group-item-success" href="listaCliente.php">Clientes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link list-group-item-primary" href="listaVeiculo.php">Veiculos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link list-group-item-success" href="listaReserva.php">Reserva</a>
+        </li>
+    </ul>
 
-    <input type="hidden" name="id" value="<?php echo $cliente['id']?>"/>
-
-    
-    <label for="nome">Nome</label><br/><br/>
-    <input type="text" name="nome" value="<?php echo $cliente['nome']?>" id="nome"/> <br/><br/>
-
-    <label for="idade">Idade</label><br/><br/>
-    <input type="number" name="idade" value="<?php echo $cliente['idade']?>" id="idade"/> <br/><br/>
-
-    <label for="cpf">Cpf</label><br/><br/>
-    <input type="text" name="cpf" value="<?php echo $cliente['cpf']?>" id="cpf"/> <br/><br/>
-
-    <label for="dataNascimento">Data de Nascimento</label><br/><br/>
-    <input type="text" name="dataNascimento" value="<?php echo $cliente['data_nascimento']?>" id="dataNascimento"/> <br/><br/>
-
-
+    <div class="container">
 
 
-    <input type="submit" value="Alterar"/>
 
-</form>
+
+        <h1>Alterar dados do Cliente</h1>
+
+
+        <div class="row">
+
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-6">
+
+                <div class="card border-dark mb-3">
+
+
+                    <div class="card-body">
+
+                        <form action="aditar_submit_cliente.php" method="POST" name="formCadastro" id="formCadastro">
+
+                            <input type="hidden" name="id" value="<?php echo $cliente['id']?>"/>
+
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" name="nome" id="nome"  value="<?php echo $cliente['nome']?>" class="form-control" placeholder="Ex.: Jao Silva">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="idade">Idade</label>
+                                <input type="number" name="idade" id="idade" value="<?php echo $cliente['idade']?>" class="form-control" placeholder="Ex.: 100">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cpf">Cpf</label>
+                                <input type="text" name="cpf" id="cpf" value="<?php echo $cliente['cpf']?>" class="form-control" placeholder="Ex.: 987.123.899-73">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dataNascimento">Data de Nascimento</label>
+                                <input type="date" name="dataNascimento"  value="<?php echo $cliente['data_nascimento']?>" id="dataNascimento" class="form-control">
+                            </div>
+
+
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-outline-dark">Alterar</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <!-- fim .card-body -->
+                    <div class="card-footer border-dark">
+                        <center>
+                            <small class="text-muted">&copy; PRV 2018</small>
+                        </center>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+</body>
+
+</html>

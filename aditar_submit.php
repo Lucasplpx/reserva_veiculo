@@ -4,7 +4,7 @@ include 'model/Usuario.php';
 $usuario = new Usuario();
 
 if(!empty($_POST['id'])){
-    $senha = $_POST['senha'];
+    $senha = md5($_POST['senha']);
     $email = $_POST['email'];
     $id = $_POST['id'];
 
