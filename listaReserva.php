@@ -7,33 +7,36 @@ $reservas = new Reservas($pdo);
 ?>
 <h1>Reservas</h1>
 
-<a href="reservar.php">Adicionar Reserva</a> 
+<a href="reservar.php" class="badge badge-info">ADICIONAR RESERVA</a> 
 <br/><br/>
 
-<a href="index.html">Página Inicial</a>
+<a href="index.html" class="badge badge-light">Página Inicial</a>
 <br/><br/>
 
 <form method="GET">
-	<select name="ano">
-		<?php for($q=date('Y');$q>=2000;$q--): ?>
-		<option><?php echo $q; ?></option>
-		<?php endfor; ?>
-	</select>
-	<select name="mes">
-		<option>01</option>
-		<option>02</option>
-		<option>03</option>
-		<option>04</option>
-		<option>05</option>
-		<option>06</option>
-		<option>07</option>
-		<option>08</option>
-		<option>09</option>
-		<option>10</option>
-		<option>11</option>
-		<option>12</option>
-	</select>
-	<input type="submit" value="Mostrar" />
+	<div style="width: 80px;" >
+		<select class="custom-select" name="ano">
+			<?php for($q=date('Y');$q>=2000;$q--): ?>
+			<option><?php echo $q; ?></option>
+			<?php endfor; ?>
+		</select>
+	
+		<select class="custom-select" name="mes">
+			<option>01</option>
+			<option>02</option>
+			<option>03</option>
+			<option>04</option>
+			<option>05</option>
+			<option>06</option>
+			<option>07</option>
+			<option>08</option>
+			<option>09</option>
+			<option>10</option>
+			<option>11</option>
+			<option>12</option>
+		</select>
+	</div>
+	<input type="submit"  class="btn btn-warning" value="Mostrar" />
 </form>
 
 <?php

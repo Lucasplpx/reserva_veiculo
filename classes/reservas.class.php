@@ -55,6 +55,26 @@ class Reservas {
 		$sql->execute();
 	}
 
+	public function getNomeCarro($id){
+
+		$marca = '';
+
+		$sql = "SELECT * FROM veiculos WHERE id = :id";
+		$sql = $this->pdo->prepare($sql);
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+
+		if($sql->rowCount() > 0){
+			$dado = $sql->fetch();
+			$marca = $dado['marca'];
+			
+			return $marca;
+			exit;
+		}
+
+		return $marca;
+
+	}
 
 
 

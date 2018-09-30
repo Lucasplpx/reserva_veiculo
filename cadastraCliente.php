@@ -8,9 +8,9 @@ if(!empty($_POST['cpf'])){
     $idade = $_POST['idade'];
     $cpf = $_POST['cpf'];
     $dataNascimento = $_POST['dataNascimento'];
-    $dataConvertida = $cliente->converteData($dataNascimento);
 
-    $cliente->adicionar($nome, $idade, $cpf, $dataConvertida);
+
+    $cliente->adicionar($nome, $idade, $cpf, $dataNascimento);
 
     
 } 

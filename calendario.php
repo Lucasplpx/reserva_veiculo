@@ -1,15 +1,15 @@
 <?php
 	
 ?>
-<table border="1" width="100%">
+<table class="table table-dark" >
 	<tr>
-		<th>Dom</th>
-		<th>Seg</th>
-		<th>Ter</th>
-		<th>Qua</th>
-		<th>Qui</th>
-		<th>Sex</th>
-		<th>Sab</th>
+		<th scope="col">Dom</th>
+		<th scope="col">Seg</th>
+		<th scope="col">Ter</th>
+		<th scope="col">Qua</th>
+		<th scope="col">Qui</th>
+		<th scope="col">Sex</th>
+		<th scope="col">Sab</th>
 	</tr>
 	<?php for($l=0;$l<$linhas;$l++): ?>
 		<tr>
@@ -26,7 +26,7 @@
 				$dr_fim = strtotime($item['data_fim']);
 
 				if( $w >= $dr_inicio && $w <= $dr_fim ) {
-					echo $item['pessoa']." (".$item['id_carro'].")    <a href=editaReserva.php?id=".$item['id']. "> Editar </a>  ||  <a href=excluirReserva.php?id=".$item['id']. "> Excluir </a>  <br/>";
+					echo $item['pessoa']." (". $reservas->getNomeCarro($item['id_carro'])   .")    <a class='badge badge-success' href=editaReserva.php?id=".$item['id']. "> Editar </a>  ||  <a class='badge badge-danger' href=excluirReserva.php?id=".$item['id']. "> Excluir </a>  <br/>";
 	
 				}
 
@@ -37,13 +37,5 @@
 		</tr>
 	<?php endfor; ?>
 </table>
-
-
-
-
-
-
-
-
 
 

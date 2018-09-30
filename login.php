@@ -39,14 +39,75 @@ if(isset($_POST['email']) && !empty($_POST['email'])){
 }
 
 ?>
-<h1>Login</h1>
-<form method="post">
-    E-mail: <br/>
-    <input type="email" name="email" /> <br/> <br/>
 
-    Senha: <br/>
-    <input type="password" name="senha" /> <br/> <br/>
 
-    <input type="submit" value="Entrar" />
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/estilo.css"/>
+    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
 
-</form>
+    <title>Login - SRV</title>
+</head>
+<body>
+
+<div class="container">
+
+
+    <div class="row" style="margin-bottom: 40px;">
+        <div class="col-sm-4"></div>
+
+            <div class="col-sm-4">
+                <img src="assets/img/user01.jpg" class="rounded float-middle" alt="Responsive image">
+            </div>
+            <div class="col-sm-4"></div>
+    </div>
+
+
+        <div class="row">
+
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-6">
+
+                <div class="card border-dark mb-3">
+                    <div class="card-header bg-transparent border-dark">
+                        <center>
+                            <span>Login</span>
+                        </center>
+                    </div>
+
+                    <div class="card-body">
+            
+                        <form method="post">
+
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Ex.: adm@gmail.com">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="password">Senha</label>
+                                <input type="password" class="form-control" id="password" name="senha" placeholder="Ex.: teste">
+                            </div>
+
+                            <div class="text-center">
+                                <input class="btn btn-outline-dark" type="submit" value="Entrar" />
+                            </div>
+
+                        </form>
+                    </div>
+    
+
+</div>
+
+</body>
+</html>
