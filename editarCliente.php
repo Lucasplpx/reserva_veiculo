@@ -87,41 +87,53 @@ if(!empty($_GET['id'])){
 
                             <input type="hidden" name="id" value="<?php echo $cliente['id']?>"/>
 
-                            <div class="form-group">
-                                <label for="nome">Nome</label>
-                                <input type="text" name="nome" id="nome"  value="<?php echo $cliente['nome']?>" class="form-control" placeholder="Ex.: Jao Silva">
-                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-10">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" name="nome" id="nome"  value="<?php echo $cliente['nome']?>" class="form-control" placeholder="Ex.: Jao Silva">
+                                </div>
 
-                            <div class="form-group">
-                                <label for="idade">Idade</label>
-                                <input type="number" name="idade" id="idade" value="<?php echo $cliente['idade']?>" class="form-control" placeholder="Ex.: 100">
+                            
+                                <div class="form-group col-md-2">
+                                    <label for="idade">Idade</label>
+                                    <fieldset disabled>
+                                        <input type="number" name="idade" id="idade" value="<?php echo $cliente['idade']?>" class="form-control" placeholder="Ex.: 100">
+                                    </fieldset>
+                                </div>
                             </div>
+                           
+                            <div class="form-row">
 
-                            <div class="form-group">
-                                <label for="cpf">Cpf</label>
-                                <input type="text" name="cpf" id="cpf" value="<?php echo $cliente['cpf']?>" class="form-control" placeholder="Ex.: 987.123.899-73">
-                            </div>
+                                <div class="form-group col-md-6">
+                                    <label for="cpf">Cpf</label>
+                                    <input type="text" name="cpf" id="cpf" value="<?php echo $cliente['cpf']?>" class="form-control" placeholder="Ex.: 987.123.899-73">
+                                </div>
 
-                            <div class="form-group">
-                                <label for="dataNascimento">Data de Nascimento</label>
-                                <input type="date" name="dataNascimento"  value="<?php echo $cliente['data_nascimento']?>" id="dataNascimento" class="form-control">
+                                <div class="form-group col-md-6">
+                                    <label for="dataNascimento">Data de Nascimento</label>
+                                    <input type="date" name="dataNascimento"  value="<?php echo $cliente['data_nascimento']?>" id="dataNascimento" class="form-control">
+                                </div>
+
                             </div>
 
                             <div class="form-group">
                                 <label for="endereco">Endereço</label>
-                                <textarea class="form-control" name="endereco" value="<?php echo $cliente['endereco']?>"  id="endereco" placeholder="Ex.: Setor: x , Rua: y , Qd: t , Lt: v" rows="3"></textarea>
+                                <textarea class="form-control" name="endereco"  id="endereco" placeholder="Ex.: Setor: x , Rua: y , Qd: t , Lt: v" rows="3">
+                                    <?php echo trim($cliente['endereco'], " \t\n\r");?> 
+                                </textarea>
                             </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="tel">Nº Telefone</label>
+                                    <input type="text" name="tel" value="<?php echo $cliente['telefone']?>" id="tel" class="form-control" placeholder="Ex.: (62) 7070-7070">
+                                </div>
 
-                            <div class="form-group">
-                                <label for="tel">Nº Telefone</label>
-                                <input type="text" name="tel" value="<?php echo $cliente['telefone']?>" id="tel" class="form-control" placeholder="Ex.: (62) 7070-7070">
+                                <div class="form-group col-md-6">
+                                    <label for="cel">Nº Celular</label>
+                                    <input type="text" name="cel" value="<?php echo $cliente['celular']?>" id="cel" class="form-control" placeholder="Ex.: (62) 9 5060-8010">
+                                </div>
                             </div>
-
-                            <div class="form-group">
-                                <label for="cel">Nº Celular</label>
-                                <input type="text" name="cel" value="<?php echo $cliente['celular']?>" id="cel" class="form-control" placeholder="Ex.: (62) 9 5060-8010">
-                            </div>
-
 
 
 

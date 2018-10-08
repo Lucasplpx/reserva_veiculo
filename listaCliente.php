@@ -50,7 +50,7 @@ $lista = $cliente->getAll();
             <td><?php echo $dado['nome'];?></td>
             <td><?php echo $dado['idade'];?></td>
             <td><?php echo $dado['cpf'];?></td>
-            <td><?php echo $dado['data_nascimento'];?></td>
+            <td><?php echo $cliente->converteData($dado['data_nascimento']);?></td>
             <td><?php echo $dado['endereco'];?></td>
             <td><?php echo $dado['telefone'];?></td>
             <td><?php echo $dado['celular'];?></td>

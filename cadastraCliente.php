@@ -5,15 +5,19 @@ $cliente = new Cliente();
 
 if(!empty($_POST['cpf'])){
     $nome = $_POST['nome'];
-    $idade = $_POST['idade'];
+    //$idade = $_POST['idade'];
     $cpf = $_POST['cpf'];
     $dataNascimento = $_POST['dataNascimento'];
-    $endereco = $_POST['endereco'];
+    $endereco = trim($_POST['endereco']);
     $telefone = $_POST['tel'];
     $celular = $_POST['cel'];
 
+    $dataConvertida =  $cliente->converteData($_POST['dataNascimento']);
+    $idadePelaData = $cliente->getIdade($dataConvertida); 
 
-    $cliente->adicionar($nome, $idade, $cpf, $dataNascimento, $endereco, $telefone, $celular);
+ 
+
+    $cliente->adicionar($nome, $idadePelaData, $cpf, $dataNascimento, $endereco, $telefone, $celular);
 
     
 } 

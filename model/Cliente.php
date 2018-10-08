@@ -60,7 +60,7 @@ class Cliente {
             $sql->bindValue(":idade", $idade);
             $sql->bindValue(":cpf", $cpf);
             $sql->bindValue(":dataNascimento", $dataNascimento);
-            $sql->bindValue(":endereco", $endereco);
+            $sql->bindValue(":endereco", trim($endereco));
             $sql->bindValue(":telefone", $telefone);
             $sql->bindValue(":celular", $celular);
             $sql->bindValue(":id", $id);
@@ -119,6 +119,28 @@ class Cliente {
     
         return $rtdata;
     
+    }
+
+    function getIdade($dataIdade){
+
+       
+
+        // Declara a data! :P
+        $data = $dataIdade;
+        
+        // Separa em dia, mês e ano
+        list($dia, $mes, $ano) = explode('/', $data);
+
+        // Descobre que dia é hoje e retorna a unix timestamp
+        $hoje = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
+        // Descobre a unix timestamp da data de nascimento do fulano
+        $nascimento = mktime( 0, 0, 0, $mes, $dia, $ano);
+
+        // Depois apenas fazemos o cálculo já citado :)
+        $idade = floor((((($hoje - $nascimento) / 60) / 60) / 24) / 365.25);
+        
+        return $idade;
+
     }
 
    
