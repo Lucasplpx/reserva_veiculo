@@ -8,9 +8,12 @@ if(!empty($_POST['cpf'])){
     $idade = $_POST['idade'];
     $cpf = $_POST['cpf'];
     $dataNascimento = $_POST['dataNascimento'];
+    $endereco = $_POST['endereco'];
+    $telefone = $_POST['tel'];
+    $celular = $_POST['cel'];
 
 
-    $cliente->adicionar($nome, $idade, $cpf, $dataNascimento);
+    $cliente->adicionar($nome, $idade, $cpf, $dataNascimento, $endereco, $telefone, $celular);
 
     
 } 

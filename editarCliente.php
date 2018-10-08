@@ -107,6 +107,22 @@ if(!empty($_GET['id'])){
                                 <input type="date" name="dataNascimento"  value="<?php echo $cliente['data_nascimento']?>" id="dataNascimento" class="form-control">
                             </div>
 
+                            <div class="form-group">
+                                <label for="endereco">Endereço</label>
+                                <textarea class="form-control" name="endereco" value="<?php echo $cliente['endereco']?>"  id="endereco" placeholder="Ex.: Setor: x , Rua: y , Qd: t , Lt: v" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tel">Nº Telefone</label>
+                                <input type="text" name="tel" value="<?php echo $cliente['telefone']?>" id="tel" class="form-control" placeholder="Ex.: (62) 7070-7070">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cel">Nº Celular</label>
+                                <input type="text" name="cel" value="<?php echo $cliente['celular']?>" id="cel" class="form-control" placeholder="Ex.: (62) 9 5060-8010">
+                            </div>
+
+
 
 
                             <div class="text-center">

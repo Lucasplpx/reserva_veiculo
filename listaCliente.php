@@ -37,6 +37,9 @@ $lista = $cliente->getAll();
         <th scope="col">IDADE</th>
         <th scope="col">CPF</th>
         <th scope="col">DATA DE NASCIMENTO</th>
+        <th scope="col">ENDERECO</th>
+        <th scope="col">TELEFONE</th>
+        <th scope="col">CELULAR</th>
         <th scope="col">AÇÕES</th>
     </tr>
   </thead>
@@ -48,6 +51,9 @@ $lista = $cliente->getAll();
             <td><?php echo $dado['idade'];?></td>
             <td><?php echo $dado['cpf'];?></td>
             <td><?php echo $dado['data_nascimento'];?></td>
+            <td><?php echo $dado['endereco'];?></td>
+            <td><?php echo $dado['telefone'];?></td>
+            <td><?php echo $dado['celular'];?></td>
             <td>
                 <a class="badge badge-success" href="editarCliente.php?id=<?php echo $dado['id']?>" class="modal_ajax">[ EDITAR ]</a>
                 <a class="badge badge-danger" onclick="return confirm('Deseja excluir?');" href="excluirCliente.php?id=<?php echo $dado['id'];?>">[ EXCLUIR ]</a>

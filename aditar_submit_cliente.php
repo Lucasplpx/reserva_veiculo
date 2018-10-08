@@ -9,9 +9,12 @@ if(!empty($_POST['id'])){
     $idade = $_POST['idade'];
     $cpf = $_POST['cpf'];
     $dataNascimento = $_POST['dataNascimento'];
+    $endereco = $_POST['endereco'];
+    $telefone = $_POST['tel'];
+    $celular = $_POST['cel'];
    
 
-    $cliente->editar($id, $nome, $idade, $cpf, $dataNascimento);
+    $cliente->editar($id, $nome, $idade, $cpf, $dataNascimento, $endereco, $telefone, $celular);
 
     header("Location: listaCliente.php");
 }

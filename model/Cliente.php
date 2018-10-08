@@ -17,15 +17,18 @@ class Cliente {
     }
 
 
-    public function adicionar($nome , $idade, $cpf, $dataNascimento) {
+    public function adicionar($nome , $idade, $cpf, $dataNascimento, $endereco, $telefone, $celular) {
 
         if($this->existeCpf($cpf) == false){
-            $sql = "INSERT INTO clientes (nome, idade, cpf, data_nascimento) VALUES (:nome , :idade, :cpf, :dataNascimento)";
+            $sql = "INSERT INTO clientes (nome, idade, cpf, data_nascimento, endereco, telefone, celular) VALUES (:nome , :idade, :cpf, :dataNascimento, :endereco, :telefone, :celular)";
             $sql = $this->pdo->prepare($sql);      
             $sql->bindValue(":nome", $nome);
             $sql->bindValue(":idade", $idade);
             $sql->bindValue(":cpf", $cpf);
             $sql->bindValue(":dataNascimento", $dataNascimento);
+            $sql->bindValue(":endereco", $endereco);
+            $sql->bindValue(":telefone", $telefone);
+            $sql->bindValue(":celular", $celular);
             $sql->execute();
 
             return true;
@@ -49,14 +52,17 @@ class Cliente {
     }
 
 
-    public function editar($id ,$nome ,$idade, $cpf, $dataNascimento){
+    public function editar($id ,$nome ,$idade, $cpf, $dataNascimento, $endereco, $telefone, $celular){
         
-            $sql = "UPDATE clientes SET nome = :nome , idade = :idade , cpf = :cpf , data_nascimento = :dataNascimento WHERE id = :id";
+            $sql = "UPDATE clientes SET nome = :nome , idade = :idade , cpf = :cpf , data_nascimento = :dataNascimento, endereco = :endereco, telefone = :telefone, celular = :celular WHERE id = :id";
             $sql = $this->pdo->prepare($sql);
             $sql->bindValue(":nome", $nome);
             $sql->bindValue(":idade", $idade);
             $sql->bindValue(":cpf", $cpf);
             $sql->bindValue(":dataNascimento", $dataNascimento);
+            $sql->bindValue(":endereco", $endereco);
+            $sql->bindValue(":telefone", $telefone);
+            $sql->bindValue(":celular", $celular);
             $sql->bindValue(":id", $id);
             $sql->execute();
             
