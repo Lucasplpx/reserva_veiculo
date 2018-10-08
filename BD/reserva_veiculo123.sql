@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Out-2018 às 01:06
+-- Generation Time: 08-Out-2018 às 22:23
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -33,17 +33,42 @@ CREATE TABLE `clientes` (
   `nome` varchar(25) NOT NULL,
   `idade` int(150) NOT NULL,
   `cpf` varchar(30) NOT NULL,
-  `data_nascimento` date NOT NULL
+  `data_nascimento` date NOT NULL,
+  `endereco` text,
+  `telefone` varchar(25) DEFAULT NULL,
+  `celular` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `clientes`
 --
 
-INSERT INTO `clientes` (`id`, `nome`, `idade`, `cpf`, `data_nascimento`) VALUES
-(1, 'Lucas', 88, '134.259.789-88', '1998-03-25'),
-(3, 'Teste', 11, '987.456.158-79', '1897-08-30'),
-(6, 'Teste Outro', 57, '456.123.789-88', '2000-02-11');
+INSERT INTO `clientes` (`id`, `nome`, `idade`, `cpf`, `data_nascimento`, `endereco`, `telefone`, `celular`) VALUES
+(1, 'Lucas', 20, '134.259.789-88', '1998-03-25', 'Rua: WwowÃ§d Qd: 5 Lt: 80  Setor: Opw.s', '(62) 7070-7070', '(62) 9 8732-5929'),
+(3, 'Teste', 116, '987.456.158-79', '1902-08-30', 'Setor: Nosow Rua: SJOFOW Qd: 88 Lt: 962', '(77) 7778-7778', '(77) 9 8887-8887'),
+(6, 'Teste Outro', 13, '456.123.789-88', '2005-02-08', 'Setor: Opwo Rua: w9w Qd: S8 Lt: txtd', '(55) 4441-4441', '(55) 9 1114-2121'),
+(7, 'Marcelo', 19, '062.551.562-32', '1998-11-08', 'Setor: Xowo  Rua: pOSOs', '(62) 5146-1267', '(62) 9 5658-5614'),
+(8, 'Jao Silva', 28, '456.899.789-89', '1990-08-14', 'Setor: okafos  Rua ajsdfo  Qd 56w Lt 79w', '(11) 1111-2316', '(65) 9 6561-5949');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `senha` varchar(100) NOT NULL,
+  `ip` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `email`, `senha`, `ip`) VALUES
+(1, 'adm@gmail.com', '698dc19d489c4e4db73e28a713eab07b', '::1');
 
 -- --------------------------------------------------------
 
@@ -62,11 +87,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `email`, `senha`) VALUES
-(1, 'testelucas@gmail.com', '0659c7992e268962384eb17fafe88364'),
 (2, 'pedro@gmail.com', '698dc19d489c4e4db73e28a713eab07b'),
 (3, 'leonardodance2011@dddd', '9a33543ee42bb7791905ab66ed0555d9'),
 (4, 'teste@gmail.com.br.tk', '6ebe76c9fb411be97b3b0d48b791a7c9'),
-(5, 'joao@gmail.com.br.tk.x', 'e99a18c428cb38d5f260853678922e03');
+(5, 'joao@gmail.com.br.tk', '57f231b1ec41dc6641270cb09a56f897');
 
 -- --------------------------------------------------------
 
@@ -79,19 +103,20 @@ CREATE TABLE `veiculos` (
   `marca` varchar(25) NOT NULL,
   `modelo` varchar(25) NOT NULL,
   `cor` varchar(20) NOT NULL,
-  `ano` int(11) NOT NULL
+  `ano` int(11) DEFAULT NULL,
+  `chassi` varchar(17) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `veiculos`
 --
 
-INSERT INTO `veiculos` (`id`, `marca`, `modelo`, `cor`, `ano`) VALUES
-(1, 'Lambo', 'XZTL', 'Preta/Cinza', 2022),
-(2, 'Chevrolet', 'z', 'BLUE', 200),
-(3, 'BMW', 'MP', 'BLACK', 2500),
-(4, 'Nissan', 'dsfd', 'dd', 190),
-(5, 'OOP', 'GTR', 'Yellow', 2019);
+INSERT INTO `veiculos` (`id`, `marca`, `modelo`, `cor`, `ano`, `chassi`) VALUES
+(1, 'Lambo', 'XZTL', 'Preta/Cinza', 2022, '9weoi wowod 79w5'),
+(2, 'Chevrolet', 'z', 'BLUE', 2002, '798 iei 49w 98w'),
+(3, 'BMW', 'MP', 'BLACK', 2000, '9d9w8d5ds 4swdsd'),
+(4, 'Nissan', 'dsfd', 'dd', 2005, 'owo 7w9r88k98k'),
+(5, 'OOP', 'GTR', 'Yellow', 2019, 'iol5 5ul545u 5uil');
 
 --
 -- Indexes for dumped tables
@@ -101,6 +126,12 @@ INSERT INTO `veiculos` (`id`, `marca`, `modelo`, `cor`, `ano`) VALUES
 -- Indexes for table `clientes`
 --
 ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -123,7 +154,13 @@ ALTER TABLE `veiculos`
 -- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
