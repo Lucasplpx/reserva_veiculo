@@ -37,6 +37,7 @@ $lista = $veiculo->getAll();
         <th scope="col">MODELO</th>
         <th scope="col">COR</th>
         <th scope="col">ANO</th>
+        <th scope="col">CHASSI</th>
         <th scope="col">AÇÕES</th>
     </tr>
   </thead>
@@ -48,6 +49,7 @@ $lista = $veiculo->getAll();
             <td><?php echo $dado['modelo'];?></td>
             <td><?php echo $dado['cor'];?></td>
             <td><?php echo $dado['ano'];?></td>
+            <td><?php echo $dado['chassi'];?></td>
             <td>
                 <a class="badge badge-success" href="editarVeiculo.php?id=<?php echo $dado['id']?>" class="modal_ajax">[ EDITAR ]</a>
                 <a class="badge badge-danger" onclick="return confirm('Deseja excluir?');" href="excluirVeiculo.php?id=<?php echo $dado['id'];?>">[ EXCLUIR ]</a>

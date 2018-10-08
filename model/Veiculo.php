@@ -17,15 +17,16 @@ class Veiculo {
     }
 
 
-    public function adicionar($marca , $modelo, $cor, $ano) {
+    public function adicionar($marca , $modelo, $cor, $ano, $chassi) {
 
         if($this->existeModelo($modelo) == false){
-            $sql = "INSERT INTO veiculos (marca, modelo, cor, ano) VALUES (:marca , :modelo, :cor, :ano)";
+            $sql = "INSERT INTO veiculos (marca, modelo, cor, ano, chassi) VALUES (:marca , :modelo, :cor, :ano, :chassi)";
             $sql = $this->pdo->prepare($sql);      
             $sql->bindValue(":marca", $marca);
             $sql->bindValue(":modelo", $modelo);
             $sql->bindValue(":cor", $cor);
             $sql->bindValue(":ano", $ano);
+            $sql->bindValue(":chassi", $chassi);
             $sql->execute();
 
             return true;
@@ -49,14 +50,15 @@ class Veiculo {
     }
 
 
-    public function editar($id ,$marca ,$modelo, $cor, $ano){
+    public function editar($id ,$marca ,$modelo, $cor, $ano, $chassi){
         
-            $sql = "UPDATE veiculos SET marca = :marca , modelo = :modelo , cor = :cor , ano = :ano WHERE id = :id";
+            $sql = "UPDATE veiculos SET marca = :marca , modelo = :modelo , cor = :cor , ano = :ano , chassi = :chassi WHERE id = :id";
             $sql = $this->pdo->prepare($sql);
             $sql->bindValue(":marca", $marca);
             $sql->bindValue(":modelo", $modelo);
             $sql->bindValue(":cor", $cor);
             $sql->bindValue(":ano", $ano);
+            $sql->bindValue(":chassi", $chassi);
             $sql->bindValue(":id", $id);
             $sql->execute();
             

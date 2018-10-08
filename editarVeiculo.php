@@ -107,6 +107,11 @@ if(!empty($_GET['id'])){
                                 <input type="number"  value="<?php echo $veiculo['ano']?>" min="2000" max="2022" name="ano" id="ano" class="form-control">
                             </div>
 
+                            <div class="form-group">
+                                <label for="chassi">Chassi</label>
+                                <input type="text" name="chassi" id="chassi" value="<?php echo $veiculo['chassi']?>" class="form-control" placeholder="Ex.: 9BW ZZZ377 VT 004251">
+                            </div>
+
 
 
                             <div class="text-center">

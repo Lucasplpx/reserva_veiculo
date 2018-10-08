@@ -9,9 +9,10 @@ if(!empty($_POST['id'])){
     $modelo = $_POST['modelo'];
     $cor = $_POST['cor'];
     $ano = $_POST['ano'];
+    $chassi = $_POST['chassi'];
    
 
-    $veiculo->editar($id, $marca, $modelo, $cor, $ano);
+    $veiculo->editar($id, $marca, $modelo, $cor, $ano, $chassi);
 
     header("Location: listaVeiculo.php");
 }
