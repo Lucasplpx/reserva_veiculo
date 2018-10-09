@@ -4,10 +4,12 @@ require 'config.php';
 include 'model/Reserva.php';
 require 'classes/carros.class.php';
 require 'classes/reservas.class.php';
+require 'model/Cliente.php';
 
 $carros = new Carros($pdo);
 $reserva = new Reserva();
 $reservas = new Reservas($pdo);
+$clientes = new Cliente();
 
 
 if(!empty($_GET['id'])){
@@ -120,11 +122,14 @@ if(!empty($_GET['id'])){
                                 <label for="datad">Data de Devolução</label>
                                 <input type="date"  value="<?php echo $reserva['data_fim'];?>" name="data_fim" id="datad" class="form-control">
                             </div>
-
+                            
                             <div class="form-group">
-                                <label for="pe">Nome da Pessoa</label>
-                                <input type="text" value="<?php echo $reserva['pessoa'];?>" name="pessoa" id="pe" class="form-control" placeholder="Ex.: GYT">
-							</div>
+                                <select class="custom-select" name="pessoa">
+                                    <?php foreach($clientes->getAll() as $dado): ?>
+                                        <option value="<?php echo $dado['id']; ?>" ><?php echo $dado['nome']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
 
                             <div class="text-center">
                                 <button type="submit" class="btn btn-outline-dark">Alterar</button>

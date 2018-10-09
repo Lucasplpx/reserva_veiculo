@@ -3,9 +3,11 @@ require 'index.php';
 require 'config.php';
 require 'classes/carros.class.php';
 require 'classes/reservas.class.php';
+require 'model/Cliente.php';
 
 $reservas = new Reservas($pdo);
 $carros = new Carros($pdo);
+$clientes = new Cliente();
 
 if(!empty($_POST['carro'])) {
 	$carro = addslashes($_POST['carro']);
@@ -124,9 +126,12 @@ if(!empty($_POST['carro'])) {
                             </div>
 
                             <div class="form-group">
-                                <label for="pe">Nome da Pessoa</label>
-                                <input type="text" name="pessoa" id="pe" class="form-control" placeholder="Ex.: GYT">
-							</div>
+                                <select class="custom-select" name="pessoa">
+                                    <?php foreach($clientes->getAll() as $dado): ?>
+                                        <option value="<?php echo $dado['id']; ?>" ><?php echo $dado['nome']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
 
                             <div class="text-center">
                                 <button type="submit" class="btn btn-outline-dark">Reservar</button>
