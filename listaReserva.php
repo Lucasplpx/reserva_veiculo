@@ -2,6 +2,8 @@
 require 'index.php';
 require 'config.php';
 require 'classes/reservas.class.php';
+require 'model/Cliente.php';
+$clientes = new Cliente();
 
 $reservas = new Reservas($pdo);
 ?>

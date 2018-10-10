@@ -91,6 +91,21 @@ class Cliente {
         }
     }
 
+    public function getNomeCliente($id){
+        $dado = "";
+        $sql = "SELECT * FROM clientes WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id",$id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $dado = $sql->fetch();
+            return $dado['nome'];
+        } else {
+            return $dado;
+        }
+    }
+
 
 
     private function existeCpf($cpf){

@@ -26,7 +26,7 @@
 				$dr_fim = strtotime($item['data_fim']);
 
 				if( $w >= $dr_inicio && $w <= $dr_fim ) {
-					echo $item['pessoa']." (". $reservas->getNomeCarro($item['id_carro'])   .")    <a class='badge badge-success' href=editaReserva.php?id=".$item['id']. "> Editar </a>  ||  <a class='badge badge-danger' href=excluirReserva.php?id=".$item['id']. "> Excluir </a>  <br/>";
+					echo $clientes->getNomeCliente($item['pessoa'])." (". $reservas->getNomeCarro($item['id_carro'])   .")    <a class='badge badge-success' href=editaReserva.php?id=".$item['id']. "> Editar </a>  ||  <a class='badge badge-danger' href=excluirReserva.php?id=".$item['id']. "> Excluir </a>  <br/>";
 	
 				}
 
