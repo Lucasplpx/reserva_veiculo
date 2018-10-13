@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10-Out-2018 às 14:18
+-- Generation Time: 13-Out-2018 às 16:56
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -53,11 +53,32 @@ INSERT INTO `clientes` (`id`, `nome`, `idade`, `cpf`, `data_nascimento`, `endere
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `devolucao`
+--
+
+CREATE TABLE `devolucao` (
+  `id` int(11) NOT NULL,
+  `pessoa` varchar(50) NOT NULL,
+  `carro` varchar(50) NOT NULL,
+  `data_devolucao` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `devolucao`
+--
+
+INSERT INTO `devolucao` (`id`, `pessoa`, `carro`, `data_devolucao`) VALUES
+(2, 'Teste Outro', '5', '2018-10-13 11:32:37'),
+(3, 'Teste Outro', 'OOP', '2018-10-13 11:43:13');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `reservas`
 --
 
 CREATE TABLE `reservas` (
-  `id` int(11) NOT NULL,
+  `id_r` int(11) NOT NULL,
   `id_carro` int(11) NOT NULL,
   `data_inicio` date NOT NULL,
   `data_fim` date NOT NULL,
@@ -68,15 +89,13 @@ CREATE TABLE `reservas` (
 -- Extraindo dados da tabela `reservas`
 --
 
-INSERT INTO `reservas` (`id`, `id_carro`, `data_inicio`, `data_fim`, `pessoa`) VALUES
+INSERT INTO `reservas` (`id_r`, `id_carro`, `data_inicio`, `data_fim`, `pessoa`) VALUES
 (1, 1, '2018-01-05', '2018-01-10', '1'),
-(2, 4, '2018-01-07', '2018-01-08', '6'),
-(4, 4, '2018-08-20', '2018-08-05', 'Pedro'),
-(6, 2, '2018-03-15', '2018-04-30', 'Mazin'),
-(7, 2, '2018-10-15', '2018-10-30', 'Lucas Plus'),
-(8, 1, '2018-09-19', '2018-09-21', 'Plus Team'),
-(9, 3, '2018-09-04', '2018-09-19', 'PlusPlayTTX'),
-(10, 5, '2018-10-01', '2018-10-25', '6');
+(4, 4, '2018-08-20', '2018-08-05', '3'),
+(6, 2, '2018-03-15', '2018-04-30', '7'),
+(7, 2, '2018-10-15', '2018-10-30', '8'),
+(8, 1, '2018-09-19', '2018-09-21', '1'),
+(9, 3, '2018-09-04', '2018-09-19', '3');
 
 -- --------------------------------------------------------
 
@@ -157,10 +176,16 @@ ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `devolucao`
+--
+ALTER TABLE `devolucao`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `reservas`
 --
 ALTER TABLE `reservas`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_r`);
 
 --
 -- Indexes for table `usuario`
@@ -191,10 +216,16 @@ ALTER TABLE `clientes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `devolucao`
+--
+ALTER TABLE `devolucao`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_r` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `usuario`

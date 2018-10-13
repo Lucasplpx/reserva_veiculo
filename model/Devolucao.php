@@ -67,6 +67,19 @@ Class Devolucao {
         }
     }
 
+    public function getDevolucoes(){
+        $sql = "SELECT * FROM devolucao";
+        $sql = $this->pdo->prepare($sql);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return $sql->fetchAll();
+        }else {
+            return array();
+        }
+
+    }
+
 
 
 

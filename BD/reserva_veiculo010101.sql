@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13-Out-2018 às 16:56
+-- Generation Time: 14-Out-2018 às 00:32
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -68,8 +68,8 @@ CREATE TABLE `devolucao` (
 --
 
 INSERT INTO `devolucao` (`id`, `pessoa`, `carro`, `data_devolucao`) VALUES
-(2, 'Teste Outro', '5', '2018-10-13 11:32:37'),
-(3, 'Teste Outro', 'OOP', '2018-10-13 11:43:13');
+(3, 'Teste Outro', 'OOP', '2018-10-13 11:43:13'),
+(4, 'Marcelo', 'BMW', '2018-10-13 18:55:19');
 
 -- --------------------------------------------------------
 
@@ -91,11 +91,9 @@ CREATE TABLE `reservas` (
 
 INSERT INTO `reservas` (`id_r`, `id_carro`, `data_inicio`, `data_fim`, `pessoa`) VALUES
 (1, 1, '2018-01-05', '2018-01-10', '1'),
-(4, 4, '2018-08-20', '2018-08-05', '3'),
 (6, 2, '2018-03-15', '2018-04-30', '7'),
-(7, 2, '2018-10-15', '2018-10-30', '8'),
-(8, 1, '2018-09-19', '2018-09-21', '1'),
-(9, 3, '2018-09-04', '2018-09-19', '3');
+(9, 3, '2018-09-04', '2018-09-19', '3'),
+(10, 2, '2018-08-10', '2018-08-20', '8');
 
 -- --------------------------------------------------------
 
@@ -219,13 +217,13 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT for table `devolucao`
 --
 ALTER TABLE `devolucao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `id_r` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_r` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `usuario`

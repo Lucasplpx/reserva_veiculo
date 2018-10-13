@@ -49,7 +49,7 @@ if(!empty($_POST['devolucao'])) {
 
     <nav class="navbar navbar-dark bg-dark">
         <p class="text-center">
-            <h1>Sistema Reserva Veículo</h1>
+            <h1>Devolução do Veiculo</h1>
         </p>
     </nav>
 
@@ -71,9 +71,9 @@ if(!empty($_POST['devolucao'])) {
 
     <div class="container">
 
-        <h1>Devolução do Veiculo</h1>
+        <h1>Escolha o Cliente</h1>
 
-    
+        
         
         <div class="row">
 
@@ -110,6 +110,7 @@ if(!empty($_POST['devolucao'])) {
                         </form>
 
                     </div>
+                    <a href="listaDevolucao.php" class="badge badge-info">################[ LISTA DEVOLUÇÕES ]################</a> 
                     <!-- fim .card-body -->
                     <div class="card-footer border-dark">
                         <center>

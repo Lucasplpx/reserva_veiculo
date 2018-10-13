@@ -17,14 +17,14 @@ if(!empty($_GET['id'])){
 
     $reserva = $reserva->getReserva($id);
 
-    if(empty($reserva['id'])){
+    if(empty($reserva['id_r'])){
         header("Location: listaReserva.php");
-        exit;
+       exit;
     }
     
 }else{
-    header("Location: listaReserva.php");
-    exit;
+        header("Location: listaReserva.php");
+        exit;
 }
 
 ?>
@@ -92,7 +92,7 @@ if(!empty($_GET['id'])){
                         <form action="aditar_submit_reserva.php" method="POST" name="formCadastro" id="formCadastro">
 
 
-							<input type="hidden" name="id" value="<?php echo $reserva['id'];?>"/>
+							<input type="hidden" name="id" value="<?php echo $reserva['id_r'];?>"/>
 
                             <div class="form-group">
                                 <label for="marca">Carro</label>

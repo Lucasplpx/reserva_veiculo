@@ -34,7 +34,7 @@ class Reserva {
 
     public function editar($id ,$id_carro ,$data_inicio, $data_fim, $pessoa){
         
-            $sql = "UPDATE reservas SET id_carro = :id_carro , data_inicio = :data_inicio, data_fim = :data_fim , pessoa = :pessoa WHERE id = :id";
+            $sql = "UPDATE reservas SET id_carro = :id_carro , data_inicio = :data_inicio, data_fim = :data_fim , pessoa = :pessoa WHERE id_r = :id";
             $sql = $this->pdo->prepare($sql);
             $sql->bindValue(":id_carro", $id_carro);
             $sql->bindValue(":data_inicio", $data_inicio);
@@ -56,7 +56,7 @@ class Reserva {
 
 
     public function getReserva($id){
-        $sql = "SELECT * FROM reservas WHERE id = :id";
+        $sql = "SELECT * FROM reservas WHERE id_r = :id";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(":id",$id);
         $sql->execute();
