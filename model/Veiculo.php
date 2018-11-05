@@ -87,6 +87,19 @@ class Veiculo {
         }
     }
 
+    public function getMarcaVeiculo($id){
+        $sql = "SELECT * FROM veiculos WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id",$id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return $sql->fetch()['marca'];
+        } else {
+            return array();
+        }
+    }
+
 
 
     private function existeModelo($modelo){

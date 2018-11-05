@@ -1,28 +1,11 @@
 <?php
 require 'index.php';
 require 'config.php';
-require 'model/Devolucao.php';
+require 'model/Cliente.php';
 
-$devolucao = new Devolucao();
+$cliente = new Cliente();
 
-$lista = $devolucao->getDevolucao();
-
-if(!empty($_POST['devolucao'])) {
-    
-    $id_reserva = $_POST['devolucao'];
-    $pes = $_POST['pessoa'];
-    $car = $_POST['carro'];
-
-    $nomeCarro = $devolucao->getNomeCarro($car);
-    $devolucao->adicionar($pes, $nomeCarro);
-    $devolucao->excluirReserva($id_reserva);
-
-    header("Location: index.html");
-
-}
-
-
-
+$lista = $cliente->getAll();
 
 ?>
 
@@ -86,25 +69,21 @@ if(!empty($_POST['devolucao'])) {
 
                     <div class="card-body">
 
-                        <form method="POST" name="formCadastro" id="formCadastro">
+                        <form method="POST" action="devolucao2.php" name="formCadastro" id="formCadastro">
 
 
                             <div class="form-group">
 
-                                <?php foreach($lista as $dado): ?>
-                                    <input type="hidden" name="pessoa" value="<?php echo $dado['nome'];?>"/>
-                                    <input type="hidden" name="carro" value="<?php echo $dado['id_carro'];?>"/>
-                                <?php endforeach; ?>
 
                                 <select class="custom-select" name="devolucao">
                                     <?php foreach($lista as $dado): ?>
-                                        <option value="<?php echo $dado['id_r']; ?>" ><?php echo $dado['nome']; ?></option>
+                                        <option value="<?php echo $dado['id']; ?>" ><?php echo $dado['nome']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-outline-dark">DESFAZER RESERVA</button>
+                                <button type="submit" class="btn btn-outline-dark">VERIFICAR RESERVAS</button>
                             </div>
 
                         </form>

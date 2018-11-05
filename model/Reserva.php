@@ -68,6 +68,20 @@ class Reserva {
         }
     }
 
+    public function getReservaCliente($id){
+        $sql = "SELECT * FROM reservas WHERE pessoa = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id",$id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return $sql->fetchAll();
+        } else {
+            return array();
+        }
+    }
+
+
     public function getVeiculo($id){
         $sql = "SELECT * FROM veiculos WHERE id = :id";
         $sql = $this->pdo->prepare($sql);
